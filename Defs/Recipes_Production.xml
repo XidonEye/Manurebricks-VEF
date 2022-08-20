@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <!--=============== Plant Fiber ====================-->
+  	<RecipeDef ParentName="MakeStoneBlocksBase">
+		<defName>N7_Make_FiberFromWood</defName>
+		<label>Break down plant fibers</label>
+		<description>Break down wood into loose plant fibers.</description>
+		<jobString>Breaking down plant fibers.</jobString>
+		<ingredients>
+			<li>
+			<filter>
+				<thingDefs>
+					<li>WoodLog</li>
+				</thingDefs>
+			</filter>
+			<count>10</count>
+			</li>			
+	 	</ingredients>
+		<allowMixingIngredients>true</allowMixingIngredients>		
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>			
+		<workAmount>600</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>CutStone</effectWorking>
+		<soundWorking>Recipe_MakeWoodPlanks_Hand</soundWorking>
+		<targetCountAdjustment>50</targetCountAdjustment>
+		<recipeUsers Inherit="false">
+			<li>CraftingSpot</li>
+			<li MayRequire="n7huntsman.ceramics.vef">N7_CeramicsBench_Basic</li>
+			<li MayRequire="n7huntsman.ceramics.vef">N7_CeramicsBench_Electric</li>
+		</recipeUsers>		
+		<products>
+			<N7_PlantFiber>30</N7_PlantFiber>
+		</products>
+	</RecipeDef>
+
+<!--=============== Manure Brick ====================-->
+	<RecipeDef ParentName="MakeStoneBlocksBase">
+		<defName>Xy_Make_RawManurebricks</defName>
+		<label>make manure bricks</label>
+		<description>Form fecal sludge and plant fiber into manure bricks.</description>
+		<jobString>Forming manure bricks.</jobString>
+		<effectWorking>CutStone</effectWorking>
+		<soundWorking>Interact_ConstructDirt</soundWorking>
+		<workAmount>200</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<workSkillLearnFactor>0.2</workSkillLearnFactor>
+		<targetCountAdjustment>20</targetCountAdjustment>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FecalSludge</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>PlantMatter</li>
+					</categories>
+				</filter>
+			<count>5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FecalSludge</li>
+			</thingDefs>
+			<categories>
+				<li>PlantMatter</li>
+			</categories>
+			<disallowedThingDefs>
+			  <li>RawHops</li>
+			  <li>SmokeleafLeaves</li>
+			  <li>PsychoidLeaves</li>
+			  <li MayRequire="Ludeon.RimWorld.Ideology">Dye</li>
+			  <li MayRequire="VanillaExpanded.VPlantsEMore">VCE_RawCanola</li>
+			  <li MayRequire="VanillaExpanded.VCookE">VCE_Flour</li>
+			  <li MayRequire="vanillaexpanded.vbrewe">VBE_RawCoffee</li>
+			  <li MayRequire="vanillaexpanded.vbrewe">VBE_RawTea</li>
+			  <li MayRequire="vanillaexpanded.vbrewe">VBE_RawTobacco</li>
+			</disallowedThingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Xy_RawManurebrick>20</Xy_RawManurebrick>
+		</products>
+		<recipeUsers>
+			<li>CraftingSpot</li>
+			<li MayRequire="n7huntsman.ceramics.vef">N7_CeramicsBench_Basic</li>
+			<li MayRequire="n7huntsman.ceramics.vef">N7_CeramicsBench_Electric</li>
+		</recipeUsers>
+	</RecipeDef>
+
+<!--=============== Adobe Brick ====================-->
+	<RecipeDef ParentName="MakeStoneBlocksBase" MayRequire="n7huntsman.ceramics.vef">
+		<defName>Xy_Make_RawRedAdobebricks</defName>
+		<label>make red adobe bricks</label>
+		<description>Form wet manure and clay into red adobe bricks.</description>
+		<jobString>Forming red adobe bricks.</jobString>
+		<effectWorking>CutStone</effectWorking>
+		<soundWorking>Interact_ConstructDirt</soundWorking>
+		<workAmount>200</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<workSkillLearnFactor>0.2</workSkillLearnFactor>
+		<targetCountAdjustment>20</targetCountAdjustment>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Xy_RawManurebrick</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>N7_RawClay</li>
+					</thingDefs>
+			</filter>
+			<count>20</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Xy_RawManurebrick</li>
+				<li>N7_RawClay</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Xy_RawRedAdobebrick>40</Xy_RawRedAdobebrick>
+		</products>
+		<recipeUsers>
+			<li>CraftingSpot</li>
+			<li>N7_CeramicsBench_Basic</li>
+			<li>N7_CeramicsBench_Electric</li>
+		</recipeUsers>
+	</RecipeDef>
+
+	<RecipeDef ParentName="MakeStoneBlocksBase" MayRequire="n7huntsman.ceramics.vef">
+		<defName>Xy_Make_RawGoldenAdobebricks</defName>
+		<label>make goldeen adobe bricks</label>
+		<description>Form wet manure and sand into golden adobe bricks.</description>
+		<jobString>Forming golden adobe bricks.</jobString>
+		<effectWorking>CutStone</effectWorking>
+		<soundWorking>Interact_ConstructDirt</soundWorking>
+		<workAmount>200</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<workSkillLearnFactor>0.2</workSkillLearnFactor>
+		<targetCountAdjustment>20</targetCountAdjustment>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Xy_RawManurebrick</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>N7_Sand</li>
+					</thingDefs>
+				</filter>
+			<count>20</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Xy_RawManurebrick</li>
+				<li>N7_Sand</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Xy_RawGoldenAdobebrick>40</Xy_RawGoldenAdobebrick>
+		</products>
+		<recipeUsers>
+			<li>CraftingSpot</li>
+			<li>N7_CeramicsBench_Basic</li>
+			<li>N7_CeramicsBench_Electric</li>
+		</recipeUsers>
+	</RecipeDef>
+
+</Defs>

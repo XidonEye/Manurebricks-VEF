@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>[SYR] Processor Framework</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<ProcessorFramework.ProcessDef>
+							<defName>Xy_RawManurebrickToDriedManurebrick_PF</defName>
+							<thingDef>Xy_DriedManurebrick</thingDef>
+							<ingredientFilter>
+								<thingDefs>
+									<li>Xy_RawManurebrick</li>
+								</thingDefs>
+							</ingredientFilter>
+							<processDays>1</processDays>
+							<usesTemperature>true</usesTemperature>
+							<temperatureSafe>0.0~600.0</temperatureSafe>
+							<temperatureIdeal>20.0~100.0</temperatureIdeal>
+							<ruinedPerDegreePerHour>2.5</ruinedPerDegreePerHour>
+							<speedBelowSafe>0.1</speedBelowSafe>
+							<speedAboveSafe>1.0</speedAboveSafe>
+							<sunFactor>0.4~1.0</sunFactor>
+							<rainFactor>1.0~0.0</rainFactor>
+							<snowFactor>1.0~0.0</snowFactor>
+							<windFactor>0.8~1.0</windFactor>
+							<filledGraphicSuffix>_Full</filledGraphicSuffix>
+						</ProcessorFramework.ProcessDef>
+						<ProcessorFramework.ProcessDef MayRequire="n7huntsman.ceramics.vef">
+							<defName>Xy_RawRedAdobebrickToDriedRedAdobebrick_PF</defName>
+							<thingDef>Xy_DriedRedAdobebrick</thingDef>
+							<ingredientFilter>
+								<thingDefs>
+									<li>Xy_RawRedAdobebrick</li>
+								</thingDefs>
+							</ingredientFilter>
+							<processDays>1</processDays>
+							<usesTemperature>true</usesTemperature>
+							<temperatureSafe>0.0~600.0</temperatureSafe>
+							<temperatureIdeal>20.0~100.0</temperatureIdeal>
+							<ruinedPerDegreePerHour>2.5</ruinedPerDegreePerHour>
+							<speedBelowSafe>0.1</speedBelowSafe>
+							<speedAboveSafe>1.0</speedAboveSafe>
+							<sunFactor>0.4~1.0</sunFactor>
+							<rainFactor>1.0~0.0</rainFactor>
+							<snowFactor>1.0~0.0</snowFactor>
+							<windFactor>0.8~1.0</windFactor>
+							<filledGraphicSuffix>_Full</filledGraphicSuffix>
+						</ProcessorFramework.ProcessDef>
+						<ProcessorFramework.ProcessDef MayRequire="n7huntsman.ceramics.vef">
+							<defName>Xy_RawGoldenAdobebrickToDriedGoldenAdobebrick_PF</defName>
+							<thingDef>Xy_DriedGoldenAdobebrick</thingDef>
+							<ingredientFilter>
+								<thingDefs>
+									<li>Xy_RawGoldenAdobebrick</li>
+								</thingDefs>
+							</ingredientFilter>
+							<processDays>1</processDays>
+							<usesTemperature>true</usesTemperature>
+							<temperatureSafe>0.0~600.0</temperatureSafe>
+							<temperatureIdeal>20.0~100.0</temperatureIdeal>
+							<ruinedPerDegreePerHour>2.5</ruinedPerDegreePerHour>
+							<speedBelowSafe>0.1</speedBelowSafe>
+							<speedAboveSafe>1.0</speedAboveSafe>
+							<sunFactor>0.4~1.0</sunFactor>
+							<rainFactor>1.0~0.0</rainFactor>
+							<snowFactor>1.0~0.0</snowFactor>
+							<windFactor>0.8~1.0</windFactor>
+							<filledGraphicSuffix>_Full</filledGraphicSuffix>
+						</ProcessorFramework.ProcessDef>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName = "Xy_BrickDryingSpot"]/thingClass</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName = "Xy_BrickDryingSpot"]</xpath>
+					<value>
+						<drawerType>MapMeshAndRealTime</drawerType>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName = "Xy_BrickDryingSpot"]/comps/li[@Class="ItemProcessor.CompProperties_ItemProcessor"]</xpath>
+					<value>
+						<li Class="ProcessorFramework.CompProperties_Processor">
+							<capacity>20</capacity>
+							<independentProcesses>false</independentProcesses>
+							<dropIngredients>true</dropIngredients>
+							<processes>
+								<li>Xy_RawManurebrickToDriedManurebrick_PF</li>
+								<li MayRequire="n7huntsman.ceramics.vef">Xy_RawRedAdobebrickToDriedRedAdobebrick_PF</li>
+								<li MayRequire="n7huntsman.ceramics.vef">Xy_RawGoldenAdobebrickToDriedGoldenAdobebrick_PF</li>
+							</processes>
+						</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

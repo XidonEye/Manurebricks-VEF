@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Manure Bricks VEF</name>
+	<author>Xeyeco</author>
+	<supportedVersions>
+		<li>1.3</li>
+	</supportedVersions>
+	<packageId>Xeyeco.manurebricks.vef</packageId>
+	<description>Adds Manure Bricks. Needs Vanilla Expanded Framework and Dubs Bad Hygiene.
+
+this is a addition to the Ceramics VEF mod, but its possible to run without it.
+
+Acknowledgements
+Thanks to N7Huntsman for the original Ceramics mod.
+Thanks to Owlchemist for his VEF mod versions, what inspired me.
+And Last but not least Thanks to Oskar Potocki and all of the Vanilla Expanded Framework Team for their great Work.</description>
+		<modDependencies>
+        <li>
+            <packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+            <displayName>Vanilla Expanded Framework</displayName>
+            <steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
+			<downloadUrl>https://github.com/AndroidQuazar/VanillaExpandedFramework</downloadUrl>
+        </li>
+        <li>
+            <packageId>dubwise.dubsbadhygiene</packageId>
+            <displayName>Dubs Bad Hygiene</displayName>
+            <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=836308268</steamWorkshopUrl>
+			<downloadUrl>https://github.com/Dubwise56/Dubs-Bad-Hygiene</downloadUrl>
+        </li>
+    </modDependencies>
+	<loadAfter>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>VanillaExpanded.VCookE</li>
+    </loadAfter>
+</ModMetaData>

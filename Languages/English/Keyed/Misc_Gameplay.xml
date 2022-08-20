@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!--=============== Drying Spot ====================-->
+	<Xy_InsertRawManurebrickDesc>Select wet manurebrick to dry.</Xy_InsertRawManurebrickDesc>
+	<Xy_InsertRawManurebrick>Select wet manurebrick</Xy_InsertRawManurebrick>
+	<Xy_InsertRawManurebrickVariable>Insert {0}</Xy_InsertRawManurebrickVariable>
+	<Xy_NoRawManurebrickFound>No wet manurebrick of that kind found in this map.</Xy_NoRawManurebrickFound>
+	<Xy_StartInsertionRawManurebrick>Bring wet manurebrick</Xy_StartInsertionRawManurebrick>
+	<Xy_StartInsertionRawManurebrickDesc>Bring wet manurebrick to start drying.</Xy_StartInsertionRawManurebrickDesc>
+	<Xy_RemoveRawManurebrick>Remove wet manurebrick</Xy_RemoveRawManurebrick>
+	<Xy_RemoveRawManurebrickDesc>Remove the wet manurebrick.</Xy_RemoveRawManurebrickDesc>	
+	<Xy_CancelBringingRawManurebrick>Cancel Bringing wet manurebrick</Xy_CancelBringingRawManurebrick>
+	<Xy_CancelBringingRawManurebrickDesc>Cancel bringing wet manurebrick.</Xy_CancelBringingRawManurebrickDesc>
+	<Xy_WaitTillJobsEndRawManurebrick>Wait until the wet manurebrick has been delivered, or cancel the job.</Xy_WaitTillJobsEndRawManurebrick>
+	<Xy_EngageRawManurebrick>Dry Into manurebrick</Xy_EngageRawManurebrick>
+	<Xy_EngageRawManurebrickDesc>Start drying manurebrick.</Xy_EngageRawManurebrickDesc>
+	<Xy_DriedManurebrickFinished>manurebrick has finished drying</Xy_DriedManurebrickFinished>
+	<Xy_DriedManurebrickInProgress>Drying rack is drying {0}. It will be ready in {1}</Xy_DriedManurebrickInProgress>
+	<Xy_DriedManurebrickReady>The manurebrick is waiting for pickup</Xy_DriedManurebrickReady>
+	<Xy_RawManurebrickImproperlyDefined>The manurebrick has been improperly defined to work. Contact the mod's author.</Xy_RawManurebrickImproperlyDefined>
+	<Xy_RemoveDriedManurebrick>Remove dried manurebrick ({0})</Xy_RemoveDriedManurebrick>
+	<Xy_RemoveDriedManurebrickDesc>Remove dried manurebrick from the drying rack.</Xy_RemoveDriedManurebrickDesc>
+
+	<Xy_BrickDryingRackEmpty>Drying rack is empty right now</Xy_BrickDryingRackEmpty>
+	<Xy_BrickDryingRackFilled>Drying rack filled with {0}</Xy_BrickDryingRackFilled>
+	<Xy_BrickDryingRackWorking>Drying rack is working:</Xy_BrickDryingRackWorking>
+	<Xy_ResourcePercentage> (filled at {0} of {1})</Xy_ResourcePercentage>
+	
+	<Xy_RainWarning>Warning: This process is sensitive to the rain.</Xy_RainWarning>
+	<Xy_IsRainWarning>Warning: Rainfall will destroy manurebrick processing.</Xy_IsRainWarning>
+
+  <!--=============== General ====================-->
+	<Xy_TempRangeInThisMachine>. This process needs a temperature between {0} and {1} degrees {2}</Xy_TempRangeInThisMachine>
+
+</LanguageData>

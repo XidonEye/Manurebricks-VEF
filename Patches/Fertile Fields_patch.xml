@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Fertile Fields [1.1]</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!-- Replace Ceramics' sand and clay with Fertile Fields' -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/RecipeDef[defName="Xy_Make_RawGoldenAdobebricks"]/ingredients/li[2]/filter/thingDefs/li[1] |
+				Defs/RecipeDef[defName="Xy_Make_RawGoldenAdobebricks"]/fixedIngredientFilter/thingDefs/li[2]</xpath>
+					<value>
+						<li>SandPile</li>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/RecipeDef[defName="Xy_Make_RawRedAdobebricks"]/ingredients/li[2]/filter/thingDefs/li[1] |
+				Defs/RecipeDef[defName="Xy_Make_RawRedAdobebricks"]/fixedIngredientFilter/thingDefs/li[2]</xpath>
+					<value>
+						<li>RFFClay</li>
+					</value>
+				</li>
+				<!-- Add stuffProps to PlantScraps -->
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="PlantScraps"]/stuffProps</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="PlantScraps"]</xpath>
+						<value>
+							<stuffProps />
+						</value>
+					</nomatch>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="PlantScraps"]/stuffProps/categories</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="PlantScraps"]/stuffProps</xpath>
+						<value>
+							<categories />
+						</value>
+					</nomatch>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="PlantScraps"]/stuffProps/categories/*/Fiber</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="PlantScraps"]/stuffProps/categories</xpath>
+						<value>
+							<li>Fiber</li>
+						</value>
+					</nomatch>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="PlantScraps"]/stuffProps/statFactors</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="PlantScraps"]/stuffProps</xpath>
+						<value>
+							<statFactors />
+						</value>
+					</nomatch>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/ThingDef[defName="PlantScraps"]/stuffProps/statFactors/Flammability</xpath>
+					<match Class="PatchOperationReplace">
+						<xpath>Defs/ThingDef[defName="PlantScraps"]/stuffProps/statFactors/Flammability</xpath>
+						<value>
+							<Flammability>1</Flammability>
+						</value>
+					</match>
+				</li>
+				<!-- Because Fertile Fields uses relatively small quanties of teraforming resources, some stuff has to be adjusted. -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/RecipeDef[defName="N7_Make_FiberFromWood"]/products/N7_PlantFiber</xpath>
+					<value>
+						<N7_PlantFiber>20</N7_PlantFiber>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/RecipeDef[defName="Xy_Make_RawRedAdobebricks"]/ingredients/li[2]/count |
+				Defs/RecipeDef[defName="Xy_Make_RawGoldenAdobebricks"]/ingredients/li[2]/count</xpath>
+					<value>
+						<count>2</count>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

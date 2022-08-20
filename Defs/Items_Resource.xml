@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--=============== Plant Fiber ====================-->
+  <ThingDef ParentName="ResourceBase">
+    <defName>N7_PlantFiber</defName>
+    <label>fiber</label>
+    <description>Coarse plant matter, a useful binder when making clay bricks.</description>
+    <category>Item</category>
+    <graphicData>
+      <texPath>Things/Item/Resource/Fiber</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Standard_Pickup</soundInteract>
+    <soundDrop>Standard_Pickup</soundDrop>
+    <statBases>
+		<Mass>0.02</Mass>
+		<Beauty>-4</Beauty>
+        <Flammability>1</Flammability>	  
+    </statBases>
+    <stuffProps>
+      <categories Inherit="false">
+        <li>Fiber</li>
+      </categories>
+      <statFactors>
+			<Flammability>1</Flammability>
+      </statFactors>
+    </stuffProps>	
+    <useHitPoints>true</useHitPoints>
+    <thingCategories>
+      <li>PlantMatter</li>
+    </thingCategories>
+  </ThingDef>
+
+	<StuffCategoryDef>
+		<defName>Fiber</defName>
+		<label>fiber</label>
+	</StuffCategoryDef>
+
+<!--=============== Manurebrick ====================-->
+	<ThingDef ParentName="ResourceBase">
+		<defName>Xy_RawManurebrick</defName>
+		<label>wet manure brick</label>
+		<description>Fresh Fecal matter formed into a rough brick. It will need to be dried or mixed with other substances before it's of any use.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/RawBlock</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<color>(112,83,49)</color>
+		</graphicData>
+		<soundInteract>Standard_Pickup</soundInteract>
+		<soundDrop>Standard_Pickup</soundDrop>
+		<statBases>
+			<MarketValue>0.1</MarketValue>
+			<MaxHitPoints>60</MaxHitPoints>
+			<DeteriorationRate>6</DeteriorationRate>
+			<Mass>0.5</Mass> 
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef ParentName="StoneBlocksBase">
+		<defName>Xy_DriedManurebrick</defName>
+		<label>manure brick</label>
+		<description>Bricks made of manure, with straw as a binder. Extremly cheap, not particularly strong and somewhat ugly. Can be used as fuel for wood substitute.</description>
+		<graphicData>
+			<color>(112,83,49)</color>
+		</graphicData>
+		<soundInteract>Standard_Pickup</soundInteract>
+		<soundDrop>Standard_Pickup</soundDrop>
+		<useHitPoints>true</useHitPoints>
+		<tradeability>None</tradeability>
+		<statBases>
+			<MarketValue>0.6</MarketValue>
+			<MaxHitPoints>60</MaxHitPoints>
+			<Mass>0.3</Mass> 
+			<Flammability>1</Flammability>
+			<StuffPower_Armor_Sharp>0.3</StuffPower_Armor_Sharp>
+			<StuffPower_Armor_Blunt>0.3</StuffPower_Armor_Blunt>
+			<StuffPower_Armor_Heat>0</StuffPower_Armor_Heat>
+			<StuffPower_Insulation_Cold>5</StuffPower_Insulation_Cold>
+			<StuffPower_Insulation_Heat>2</StuffPower_Insulation_Heat>
+			<SharpDamageMultiplier>0.2</SharpDamageMultiplier>
+			<BluntDamageMultiplier>0.5</BluntDamageMultiplier>
+			<Beauty>-25</Beauty>
+		</statBases>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+		<isTechHediff>true</isTechHediff>
+    <techHediffsTags>
+      <li>Poor</li>
+    </techHediffsTags>
+		<burnableByRecipe>true</burnableByRecipe>
+		<stuffProps>
+			<statOffsets>
+				<Cleanliness>-0.5</Cleanliness>
+				<Beauty>-0.5</Beauty>
+			</statOffsets>
+			<stuffAdjective>manure</stuffAdjective>
+			<categories>
+				<li>Stony</li>
+			</categories>
+			<color>(112,83,49)</color>
+			<commonality>0.001</commonality>
+			<appearance>Bricks</appearance>
+			<constructEffect>ConstructDirt</constructEffect>
+			<soundImpactStuff>BulletImpact_Ground</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+			<statFactors>
+				<MaxHitPoints>0.3</MaxHitPoints>
+				<Beauty>-0.8</Beauty>
+				<Flammability>1</Flammability>
+				<WorkToMake>0.9</WorkToMake>
+				<WorkToBuild>1.2</WorkToBuild>
+				<DoorOpenSpeed>0.5</DoorOpenSpeed>
+				<BedRestEffectiveness>0.5</BedRestEffectiveness>
+				<Comfort>0.5</Comfort>
+				<MeleeWeapon_CooldownMultiplier>1.5</MeleeWeapon_CooldownMultiplier>
+			</statFactors>
+			<canSuggestUseDefaultStuff>false</canSuggestUseDefaultStuff>
+		</stuffProps>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<smeltable>false</smeltable>
+		<allowedArchonexusCount>10</allowedArchonexusCount>
+	</ThingDef>
+
+<!--=============== Adobebrick ====================-->
+	<ThingDef ParentName="ResourceBase" MayRequire="n7huntsman.ceramics.vef">
+		<defName>Xy_RawRedAdobebrick</defName>
+		<label>wet red adobe brick</label>
+		<description>Fresh manure mixed with clay formed into a rough brick. It will need to be dried before it's of any use.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/RawBlock</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<color>(197,95,50)</color>
+		</graphicData>
+		<soundInteract>Standard_Pickup</soundInteract>
+		<soundDrop>Standard_Pickup</soundDrop>
+		<statBases>
+			<MarketValue>0.1</MarketValue>
+			<MaxHitPoints>60</MaxHitPoints>
+			<DeteriorationRate>6</DeteriorationRate>
+			<Mass>0.5</Mass> 
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef ParentName="StoneBlocksBase" MayRequire="n7huntsman.ceramics.vef">
+		<defName>Xy_DriedRedAdobebrick</defName>
+		<label>red adobe brick</label>
+		<description>Bricks made of manure and clay. Cheap and not particularly strong.</description>
+		<graphicData>
+			<color>(197,95,50)</color>
+		</graphicData>
+		<soundInteract>Standard_Pickup</soundInteract>
+		<soundDrop>Standard_Pickup</soundDrop>
+		<useHitPoints>true</useHitPoints>
+		<tradeability>None</tradeability>
+		<statBases>
+			<MarketValue>0.7</MarketValue>
+			<MaxHitPoints>150</MaxHitPoints>
+			<Mass>0.6</Mass> 
+			<Flammability>0</Flammability>
+			<StuffPower_Armor_Sharp>0.48</StuffPower_Armor_Sharp>
+			<StuffPower_Armor_Blunt>0.48</StuffPower_Armor_Blunt>
+			<StuffPower_Armor_Heat>0.37</StuffPower_Armor_Heat>
+			<StuffPower_Insulation_Cold>8</StuffPower_Insulation_Cold>
+			<StuffPower_Insulation_Heat>4</StuffPower_Insulation_Heat>
+			<SharpDamageMultiplier>0.37</SharpDamageMultiplier>
+			<BluntDamageMultiplier>0.82</BluntDamageMultiplier>
+		</statBases>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+		<stuffProps>
+			<stuffAdjective>adobe</stuffAdjective>
+			<categories>
+				<li>Stony</li>
+			</categories>
+			<color>(197,95,50)</color>
+			<commonality>0.3</commonality>
+			<appearance>Bricks</appearance>
+			<constructEffect>ConstructDirt</constructEffect>
+			<soundImpactStuff>BulletImpact_Ground</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+			<statFactors>
+				<MaxHitPoints>0.7</MaxHitPoints>
+				<Flammability>0</Flammability>
+				<WorkToMake>1.1</WorkToMake>
+				<WorkToBuild>4</WorkToBuild>
+				<DoorOpenSpeed>0.9</DoorOpenSpeed>
+				<BedRestEffectiveness>0.9</BedRestEffectiveness>
+				<Comfort>0.8</Comfort>
+				<MeleeWeapon_CooldownMultiplier>1.1</MeleeWeapon_CooldownMultiplier>
+			</statFactors>
+			<statOffsets>
+				<Beauty>1</Beauty>
+			</statOffsets>
+		</stuffProps>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<smeltable>false</smeltable>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase" MayRequire="n7huntsman.ceramics.vef">
+		<defName>Xy_RawGoldenAdobebrick</defName>
+		<label>wet golden adobe brick</label>
+		<description>Fresh manure mixed with sand formed into a rough brick. It will need to be dried before it's of any use.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/RawBlock</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<color>(181,154,70)</color>
+		</graphicData>
+		<soundInteract>Standard_Pickup</soundInteract>
+		<soundDrop>Standard_Pickup</soundDrop>
+		<statBases>
+			<MarketValue>0.1</MarketValue>
+			<MaxHitPoints>60</MaxHitPoints>
+			<DeteriorationRate>6</DeteriorationRate>
+			<Mass>0.5</Mass> 
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef ParentName="StoneBlocksBase" MayRequire="n7huntsman.ceramics.vef">
+		<defName>Xy_DriedGoldenAdobebrick</defName>
+		<label>golden adobe brick</label>
+		<description>Bricks made of manure and sand. Cheap and not particularly strong.</description>
+		<graphicData>
+			<color>(181,154,70)</color>
+		</graphicData>
+		<soundInteract>Standard_Pickup</soundInteract>
+		<soundDrop>Standard_Pickup</soundDrop>
+		<useHitPoints>true</useHitPoints>
+		<tradeability>None</tradeability>
+		<statBases>
+			<MarketValue>0.7</MarketValue>
+			<MaxHitPoints>150</MaxHitPoints>
+			<Mass>0.6</Mass> 
+			<Flammability>0</Flammability>
+			<StuffPower_Armor_Sharp>0.48</StuffPower_Armor_Sharp>
+			<StuffPower_Armor_Blunt>0.48</StuffPower_Armor_Blunt>
+			<StuffPower_Armor_Heat>0.37</StuffPower_Armor_Heat>
+			<StuffPower_Insulation_Cold>8</StuffPower_Insulation_Cold>
+			<StuffPower_Insulation_Heat>4</StuffPower_Insulation_Heat>
+			<SharpDamageMultiplier>0.37</SharpDamageMultiplier>
+			<BluntDamageMultiplier>0.82</BluntDamageMultiplier>
+		</statBases>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+		<stuffProps>
+			<stuffAdjective>adobe</stuffAdjective>
+			<categories>
+				<li>Stony</li>
+			</categories>
+			<color>(181,154,70)</color>
+			<commonality>0.3</commonality>
+			<appearance>Bricks</appearance>
+			<constructEffect>ConstructDirt</constructEffect>
+			<soundImpactStuff>BulletImpact_Ground</soundImpactStuff>
+			<soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+			<soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+			<statFactors>
+				<MaxHitPoints>0.7</MaxHitPoints>
+				<Flammability>0</Flammability>
+				<WorkToMake>1.1</WorkToMake>
+				<WorkToBuild>4</WorkToBuild>
+				<DoorOpenSpeed>0.9</DoorOpenSpeed>
+				<BedRestEffectiveness>0.9</BedRestEffectiveness>
+				<Comfort>0.8</Comfort>
+				<MeleeWeapon_CooldownMultiplier>1.1</MeleeWeapon_CooldownMultiplier>
+			</statFactors>
+			<statOffsets>
+				<Beauty>1</Beauty>
+			</statOffsets>
+		</stuffProps>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<smeltable>false</smeltable>
+	</ThingDef>
+
+</Defs>
